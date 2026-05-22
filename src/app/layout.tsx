@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { ThemeProvider } from '@/components/ThemeProvider'
+import { ThemeToggle } from '@/components/ThemeToggle'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -12,9 +14,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <div className="container">
+        <ThemeProvider attribute="data-theme" defaultTheme="light" enableSystem>
+          <div className="container">
           <header className="header">
             <div className="logo">
               <a href="/">David Maynard</a>
@@ -23,12 +26,14 @@ export default function RootLayout({
               <a href="/">Home</a>
               <a href="/about">About</a>
               <a href="/blog">Blog</a>
+              <ThemeToggle />
             </nav>
           </header>
           <main>
             {children}
           </main>
         </div>
+        </ThemeProvider>
       </body>
     </html>
   )
