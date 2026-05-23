@@ -18,8 +18,7 @@ export interface PostData {
 }
 
 export function getSortedPostsData(): Omit<PostData, 'contentHtml'>[] {
-  // Get file names under /posts
-  const fileNames = fs.readdirSync(postsDirectory).filter(file => file.endsWith('.md'));
+  const fileNames = fs.readdirSync(postsDirectory).filter(file => file.endsWith('.md') && file !== 'TEMPLATE.md');
   const allPostsData = fileNames.map((fileName) => {
     // Remove ".md" from file name to get slug
     const id = fileName.replace(/\.md$/, '');
@@ -54,7 +53,7 @@ export function getSortedPostsData(): Omit<PostData, 'contentHtml'>[] {
 
 export async function getPostData(slug: string): Promise<PostData> {
   // Find the file that matches the slug
-  const fileNames = fs.readdirSync(postsDirectory).filter(file => file.endsWith('.md'));
+  const fileNames = fs.readdirSync(postsDirectory).filter(file => file.endsWith('.md') && file !== 'TEMPLATE.md');
   let targetFileName = fileNames.find(file => {
     const fullPath = path.join(postsDirectory, file);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -93,7 +92,7 @@ export async function getPostData(slug: string): Promise<PostData> {
 }
 
 export function getAllPostSlugs() {
-  const fileNames = fs.readdirSync(postsDirectory).filter(file => file.endsWith('.md'));
+  const fileNames = fs.readdirSync(postsDirectory).filter(file => file.endsWith('.md') && file !== 'TEMPLATE.md');
   return fileNames.map((fileName) => {
     const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');

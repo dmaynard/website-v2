@@ -3,7 +3,7 @@ date: 2020-02-02
 title: 'Jugwalking: Exercise Your Mind, Your Body, and the Neural Network that connects them'
 template: post
 teaser: 'A non-impact, non-aerobic exercise for mind, body and awareness'
-thumbnail: '../thumbnails/jugwalking.png'
+thumbnail: '../images/jugwalkingmillisecond.gif'
 slug: juggle-walking
 categories:
   - learning
@@ -16,6 +16,7 @@ tags:
   - jugwalking
 ---
 # First You Should Learn How To Juggle
+
 It's easy, everyone can learn to juggle. It does take some practice, but it is much easier than learning to play an instrument, or learning a foreign language.  It is also fun.
 
 ## Benefits of Learning to Juggle.
@@ -59,6 +60,5 @@ The hour long walks in same neighborhood began to get pretty boring. I knew how 
 * Jugwalk at your own risk only in safe environments.
 
 ## Have Fun!
-![gif](../images/jugwalkingmillisecond.gif)
 
 Additional Resources: [International Jugglers Association](http://www.juggle.org)

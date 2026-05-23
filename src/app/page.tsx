@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <section className="hero">
         <h1>David S. Maynard</h1>
-        <p>Software Artist. Exploring the intersection of code, art, and history since 1982.</p>
+        <p>Software Artist. Exploring the intersection of code, art, and software development since the 1969.</p>
       </section>
 
       <section>
