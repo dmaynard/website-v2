@@ -8,7 +8,7 @@ slug: rust-audio-visualizer
 
 # What a Long, Strange Trip It's Been
 
-When I reflect on this project, I can't help but marvel at the amazing contrast it presents. In 1982, I wrote my first game (*Worms?*) on an Atari 800 home computer. My entire development system lived on a single 380KB floppy disk. Back then, bringing software to the world meant finding a publisher, manufacturing physical disks or cartridges, and shipping them out to retail stores in boxes.
+When I reflect on this project, I can't help but marvel at the amazing contrast it presents. In 1982, I wrote my first game (*Worms?*) on an Atari 800 home computer. My entire development system lived on a single 90KB floppy disk. Back then, bringing software to the world meant finding a publisher, manufacturing physical disks or cartridges, and shipping them out to retail stores in boxes.
 
 Today, I can sit at my laptop, collaborate with an AI assistant, and write a high-performance audio visualizer using bleeding-edge technologies like Rust and WebAssembly. With a single push of a button, I can publish this application to the web, making it instantly accessible to billions of potential users worldwide. What a long, strange trip it's been.
 
