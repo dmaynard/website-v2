@@ -40,5 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# reports
+# reports & drafts
 broken_links_report.md
+hn_draft.md
