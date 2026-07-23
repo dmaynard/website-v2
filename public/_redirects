@@ -1,7 +1,42 @@
 # Redirects from what the browser requests to what we serve
 # https://www.netlify.app/docs/redirects/
-/tutorials/              /blog/
-/projects/               /blog/
-/portfolio/              /blog/
-/thoughts/               /blog/
-/search/                 /
+
+# Blog post redirects from old site structure
+/juggle-walking/                        /blog/juggle-walking                   301
+/juggle-walking                         /blog/juggle-walking                   301
+/software-artist-1982-vs-today/         /blog/software-artist-1982-vs-today    301
+/software-artist-1982-vs-today          /blog/software-artist-1982-vs-today    301
+/software-artists/                      /blog/software-artists                 301
+/software-artists                       /blog/software-artists                 301
+/darworms-launch-announcement/          /blog/darworms-launch-announcement     301
+/darworms-launch-announcement           /blog/darworms-launch-announcement     301
+/artist-tribute-jim-nitchals/           /blog/artist-tribute-jim-nitchals      301
+/artist-tribute-jim-nitchals            /blog/artist-tribute-jim-nitchals      301
+/chaotic-attractor/                     /blog/chaotic-attractor                301
+/chaotic-attractor                      /blog/chaotic-attractor                301
+/the-joy-of-coding-observable/          /blog/the-joy-of-coding-observable     301
+/the-joy-of-coding-observable           /blog/the-joy-of-coding-observable     301
+/storiadelpcgaming/                     /blog/storiadelpcgaming                301
+/storiadelpcgaming                      /blog/storiadelpcgaming                301
+/rust-wasm-attractor/                  /blog/rust-wasm-attractor               301
+/rust-wasm-attractor                   /blog/rust-wasm-attractor               301
+/extending-covid-dashboard/             /blog/extending-covid-dashboard        301
+/extending-covid-dashboard              /blog/extending-covid-dashboard        301
+/keyset/                                /blog/keyset                           301
+/keyset                                 /blog/keyset                           301
+/rolling-polygons-mandalas/             /blog/rolling-polygons-mandalas        301
+/rolling-polygons-mandalas              /blog/rolling-polygons-mandalas        301
+/colorful-pascal-mandalas/              /blog/colorful-pascal-mandalas         301
+/colorful-pascal-mandalas               /blog/colorful-pascal-mandalas         301
+/pickover-attractor/                    /blog/pickover-attractor               301
+/pickover-attractor                     /blog/pickover-attractor               301
+/rust-audio-visualizer/                 /blog/rust-audio-visualizer            301
+/rust-audio-visualizer                  /blog/rust-audio-visualizer            301
+/cyclic-demons/                         /blog/cyclic-demons                    301
+/cyclic-demons                          /blog/cyclic-demons                    301
+
+/tutorials/                             /blog/                                 301
+/projects/                              /blog/                                 301
+/portfolio/                             /blog/                                 301
+/thoughts/                              /blog/                                 301
+/search/                                /                                      301
