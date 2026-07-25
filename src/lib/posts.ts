@@ -1,8 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkMath from 'remark-math';
+import remarkRehype from 'remark-rehype';
+import rehypeKatex from 'rehype-katex';
+import rehypeStringify from 'rehype-stringify';
 
 const postsDirectory = path.join(process.cwd(), 'src/content/posts');
 
@@ -76,9 +80,13 @@ export async function getPostData(slug: string): Promise<PostData> {
   // Convert relative paths like `../images/` to absolute `/images/`
   let processedContent = matterResult.content.replace(/\]\(\.\.\/images\//g, '](/images/');
 
-  // Use remark to convert markdown into HTML string
-  const processedHtml = await remark()
-    .use(html, { sanitize: false })
+  // Use unified with remark and rehype plugins to convert markdown and LaTeX math into HTML string
+  const processedHtml = await unified()
+    .use(remarkParse)
+    .use(remarkMath)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeKatex)
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(processedContent);
   const contentHtml = processedHtml.toString();
 

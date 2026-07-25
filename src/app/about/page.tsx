@@ -1,8 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkMath from 'remark-math';
+import remarkRehype from 'remark-rehype';
+import rehypeKatex from 'rehype-katex';
+import rehypeStringify from 'rehype-stringify';
 import { notFound } from 'next/navigation';
 
 export const metadata = {
@@ -24,8 +28,12 @@ export default async function About() {
   // Replace relative image paths
   let processedContent = matterResult.content.replace(/\]\(\.\.\/images\//g, '](/images/');
 
-  const processedHtml = await remark()
-    .use(html, { sanitize: false })
+  const processedHtml = await unified()
+    .use(remarkParse)
+    .use(remarkMath)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeKatex)
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(processedContent);
   const contentHtml = processedHtml.toString();
 
