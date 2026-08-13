@@ -15,6 +15,7 @@ export interface PostData {
   slug: string;
   title: string;
   date: string;
+  updated?: string;
   teaser: string;
   contentHtml: string;
   thumbnail?: string;
@@ -40,19 +41,17 @@ export function getSortedPostsData(): Omit<PostData, 'contentHtml'>[] {
     // Combine the data with the slug
     return {
       slug,
-      ...(matterResult.data as { date: string; title: string; teaser: string; thumbnail: string; categories: string[]; tags: string[] }),
+      ...(matterResult.data as { date: string; updated?: string; title: string; teaser: string; thumbnail: string; categories: string[]; tags: string[] }),
       // Handle the fact that some thumbnails use '../thumbnails/' relative path, convert to absolute public path
       thumbnail: matterResult.data.thumbnail ? matterResult.data.thumbnail.replace(/^\.\.\/thumbnails\//, '/thumbnails/') : undefined,
     };
   });
 
-  // Sort posts by date
+  // Sort posts by most recent date (updated || date)
   return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
-    }
+    const timeA = new Date(a.updated || a.date).getTime();
+    const timeB = new Date(b.updated || b.date).getTime();
+    return timeB - timeA;
   });
 }
 
@@ -98,7 +97,7 @@ export async function getPostData(slug: string): Promise<PostData> {
   return {
     slug,
     contentHtml,
-    ...(matterResult.data as { date: string; title: string; teaser: string; thumbnail: string; categories: string[]; tags: string[] }),
+    ...(matterResult.data as { date: string; updated?: string; title: string; teaser: string; thumbnail: string; categories: string[]; tags: string[] }),
     thumbnail: matterResult.data.thumbnail ? matterResult.data.thumbnail.replace(/^\.\.\/thumbnails\//, '/thumbnails/') : undefined,
   };
 }

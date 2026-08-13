@@ -42,6 +42,15 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
             month: 'long',
             day: 'numeric'
           })}
+          {postData.updated && (
+            <span style={{ marginLeft: '0.75rem', opacity: 0.85, fontStyle: 'italic' }}>
+              • Updated {new Date(postData.updated).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </span>
+          )}
         </div>
 
       </header>

@@ -14,13 +14,17 @@ export default function Home() {
       <section>
         <h2>Latest Explorations</h2>
         <div className="posts-grid">
-          {allPostsData.map(({ slug, date, title, teaser, thumbnail }) => (
+          {allPostsData.map(({ slug, date, updated, title, teaser, thumbnail }) => (
             <Link href={`/blog/${slug}`} key={slug} className="glass-panel post-card">
               {thumbnail && (
                 <img src={thumbnail} alt={title} className="post-card-image" />
               )}
               <div className="post-card-date">
-                {new Date(date).toLocaleDateString('en-US', {
+                {updated ? `Updated ${new Date(updated).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}` : new Date(date).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric'
