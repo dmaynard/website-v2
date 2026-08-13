@@ -92,11 +92,11 @@ Networking Bandwidth  | 300 baud point to point acoustic modem |  170 Mbs Intern
 Channel  | Retail  |  Single Page Web Application | molasses vs frictionless
 Deployment Time  | ~ 6 weeks  |  ~ 6 minutes | ~ 10,000 faster
 Customer Feedback Time  | snail mail  | email  |  ~ 4,000 faster
-Cost   | $45 US   |  Free (darworms.com) | Free  | 2,000 more
+Cost   | $45 US   |  Free (darworms.com) | Free
 Publisher | Electronic Arts | Self Published | Corporation vs Individual
 Marketing Media  |  Print Ads |  ? Facebook ? |  **?**
 Marketing Budget | $50K (1) |  ~ $0  |  0 x
-Units (sold or downloads)  | ~ 15,000  | **?**
+Units (sold or downloads)  | ~ 15,000  | **?** | **?**
 Total Author Revenue  |  $15,000 US |  **?**  |   **?**
 
 (1)  This is a % of the EA launch ad budget as Worms? was a Launch Title for EA

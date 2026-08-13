@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
+import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import remarkRehype from 'remark-rehype';
 import rehypeKatex from 'rehype-katex';
@@ -77,12 +78,15 @@ export async function getPostData(slug: string): Promise<PostData> {
   const matterResult = matter(fileContents);
 
   // Replace image paths in the markdown content
-  // Convert relative paths like `../images/` to absolute `/images/`
-  let processedContent = matterResult.content.replace(/\]\(\.\.\/images\//g, '](/images/');
+  // Convert relative paths like `../images/` or `../thumbnails/` to absolute `/images/` or `/thumbnails/`
+  let processedContent = matterResult.content
+    .replace(/\]\(\.\.\/(images|thumbnails)\//g, ']/$1/')
+    .replace(/src="\.\.\/(images|thumbnails)\//g, 'src="/$1/');
 
   // Use unified with remark and rehype plugins to convert markdown and LaTeX math into HTML string
   const processedHtml = await unified()
     .use(remarkParse)
+    .use(remarkGfm)
     .use(remarkMath)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeKatex)
